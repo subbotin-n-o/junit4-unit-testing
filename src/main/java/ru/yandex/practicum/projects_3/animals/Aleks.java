@@ -6,7 +6,6 @@ import java.util.List;
 public class Aleks extends Lion {
 
     private final List<String> friendList = Arrays.asList("Марти", "Глория", "Мелман");
-    private final String placeOfResidence = "Нью-Йоркский зоопарк";
 
     public Aleks(Feline feline) throws Exception {
         super(feline, "Самец");
@@ -22,6 +21,6 @@ public class Aleks extends Lion {
     }
 
     public String getPlaceOfLiving() {
-        return placeOfResidence;
+        return "Нью-Йоркский зоопарк";
     }
 }
