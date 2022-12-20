@@ -28,6 +28,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return predator.getFood("Хищник");
+        return predator.eatMeat();
     }
 }
