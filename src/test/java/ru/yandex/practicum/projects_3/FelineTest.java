@@ -2,6 +2,7 @@ package ru.yandex.practicum.projects_3;
 
 import org.junit.Test;
 import ru.yandex.practicum.projects_3.animals.Feline;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
