@@ -2,19 +2,22 @@ package ru.yandex.practicum.projects_3;
 
 import org.junit.Test;
 import ru.yandex.practicum.projects_3.animals.Feline;
-
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
 
     @Test
-    public void eatMeatReturnsValidEatMeat() {
+    public void eatMeatReturnsValidFood() {
         Feline feline = new Feline();
-        String expectedEatMeat = "Животные, Птицы, Рыба";
+        String[] expectedFood = {"Животные", "Птицы", "Рыба"};
 
         try {
-            String actualEatMeat = String.join(", ", feline.eatMeat());
-            assertEquals(expectedEatMeat, actualEatMeat);
+            String[] actualFood = new String[expectedFood.length];
+            feline.eatMeat().toArray(actualFood);
+
+            assertArrayEquals(expectedFood, actualFood);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
