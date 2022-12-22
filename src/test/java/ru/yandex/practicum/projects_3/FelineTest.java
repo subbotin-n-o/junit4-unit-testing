@@ -1,111 +1,52 @@
 package ru.yandex.practicum.projects_3;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import ru.yandex.practicum.projects_3.animals.Animal;
 import ru.yandex.practicum.projects_3.animals.Feline;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-//@RunWith(Parameterized.class)
 public class FelineTest {
 
-//    private final Predator predator;
-//    private final Herbivore herbivore;
-//    private final String expected;
-
-//    public FelineTest(Feline feline, String expected) {
-//        this.predator = feline;
-//        this.herbivore = null;
-//        this.expected = expected;
-//    }
-
     @Test
-    public void eatMeatPredatorArgumentReturnText() {
+    public void eatMeatReturnsValidEatMeat() {
         Feline feline = new Feline();
+        String expectedEatMeat = "Животные, Птицы, Рыба";
+
         try {
-            String expected = "Животные, Птицы, Рыба";
-            String actual = String.join(", ", feline.eatMeat());
-
-            assertEquals(expected, actual);
-
+            String actualEatMeat = String.join(", ", feline.eatMeat());
+            assertEquals(expectedEatMeat, actualEatMeat);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Test
-    public void eatMeatHerbivoreArgumentReturnText() {
-        Herbivore herbivore = new Herbivore();
-        try {
-            String expected = "Трава, Различные растения";
-            String actual = String.join(", ", herbivore.eatMeat("Травоядное"));
-
-            assertEquals(expected, actual);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void eatMeatNoArgumentShowsError() {
-        Herbivore herbivore = new Herbivore();
-        try {
-            String expected = "Трава, Различные растения";
-            String actual = String.join(", ", herbivore.eatMeat());
-
-            assertEquals(expected, actual);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-//    @Parameterized.Parameters
-//    public static Object[][] getSumData() {
-//        return new Object[][] {
-//                {},
-//        };
-//    }
-
-
-    @Test
-    public void getFamilyNoArgumentReturnText() {
+    public void getFamilyReturnsValidFamily() {
         Feline feline = new Feline();
-        String expected = "Кошачьи";
-        String actual = feline.getFamily();
+        String expectedFamily = "Кошачьи";
 
-        assertEquals(expected, actual);
+        String actualFamily = feline.getFamily();
+
+        assertEquals(expectedFamily, actualFamily);
     }
 
     @Test
-    public void getKittensNoArgumentShowsOne() {
+    public void getKittensNoArgumentReturnsOne() {
         Feline feline = new Feline();
-        int expected = 1;
-        int actual = feline.getKittens();
+        int expectedKittens = 1;
 
-        assertEquals(expected, actual);
+        int actualKittens = feline.getKittens();
+
+        assertEquals(expectedKittens, actualKittens);
     }
 
     @Test
-    public void getKittensWithAnArgumentShowsArgument() {
+    public void getKittensWithAnArgumentReturnsArgument() {
         Feline feline = new Feline();
-        int expected = 10;
-        int actual = feline.getKittens(expected);
+        int expectedKittens = 10;
 
-        assertEquals(expected, actual);
-    }
-}
+        int actualKittens = feline.getKittens(expectedKittens);
 
-class Herbivore extends Animal {
-    public List<String> eatMeat(String animal) throws Exception {
-        return getFood(animal);
-    }
-
-    public List<String> eatMeat() throws Exception {
-        return getFood(null);
+        assertEquals(expectedKittens, actualKittens);
     }
 }
