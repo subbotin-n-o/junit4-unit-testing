@@ -47,4 +47,5 @@ public class AnimalTest {
         assertEquals(expectedFamily, actualFamily);
 
     }
+
 }

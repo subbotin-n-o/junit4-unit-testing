@@ -18,6 +18,7 @@ public class AleksTest {
         int actualKittens = aleks.getKittens();
 
         assertEquals(expectedKittens, actualKittens);
+
     }
 
     @Test
@@ -30,6 +31,7 @@ public class AleksTest {
         aleks.getFriends().toArray(actualFriendList);
 
         assertArrayEquals(expectedFriendList, actualFriendList);
+
     }
 
     @Test
@@ -41,5 +43,7 @@ public class AleksTest {
         String actualPlaceOfLiving = aleks.getPlaceOfLiving();
 
         assertEquals(expectedPlaceOfLiving, actualPlaceOfLiving);
+
     }
+
 }

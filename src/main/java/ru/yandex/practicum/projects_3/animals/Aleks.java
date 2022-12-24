@@ -23,4 +23,5 @@ public class Aleks extends Lion {
     public String getPlaceOfLiving() {
         return "Нью-Йоркский зоопарк";
     }
+
 }

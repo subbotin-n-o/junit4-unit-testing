@@ -46,5 +46,7 @@ public class CatTest {
         String actualSound = cat.getSound();
 
         assertEquals(expectedSound, actualSound);
+
     }
+
 }

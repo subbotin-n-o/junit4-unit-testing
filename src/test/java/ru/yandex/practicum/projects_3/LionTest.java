@@ -50,6 +50,7 @@ public class LionTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     @Test
@@ -59,6 +60,7 @@ public class LionTest {
         int actualKittens = lion.getKittens();
 
         assertEquals(expectedKittens, actualKittens);
+
     }
 
     @Test
@@ -69,6 +71,7 @@ public class LionTest {
             assertTrue(true);
         }
         assertFalse(false);
+
     }
 
     @Parameterized.Parameters
@@ -91,4 +94,5 @@ public class LionTest {
                 {feline, lionFemale}
         };
     }
+
 }

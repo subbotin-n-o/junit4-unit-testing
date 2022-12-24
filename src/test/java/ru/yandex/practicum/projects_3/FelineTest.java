@@ -22,6 +22,7 @@ public class FelineTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     @Test
@@ -32,6 +33,7 @@ public class FelineTest {
         String actualFamily = feline.getFamily();
 
         assertEquals(expectedFamily, actualFamily);
+
     }
 
     @Test
@@ -42,6 +44,7 @@ public class FelineTest {
         int actualKittens = feline.getKittens();
 
         assertEquals(expectedKittens, actualKittens);
+
     }
 
     @Test
@@ -52,5 +55,7 @@ public class FelineTest {
         int actualKittens = feline.getKittens(expectedKittens);
 
         assertEquals(expectedKittens, actualKittens);
+
     }
+
 }
