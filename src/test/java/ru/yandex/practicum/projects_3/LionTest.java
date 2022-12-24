@@ -53,29 +53,38 @@ public class LionTest {
     }
 
     @Test
-    public void getKittensReturnsValidKittens() throws Exception {
+    public void getKittensReturnsValidKittens() {
         int expectedKittens = 1;
 
-        int actualKittens = feline.getKittens();
+        int actualKittens = lion.getKittens();
 
         assertEquals(expectedKittens, actualKittens);
     }
 
     @Test
-    public void doesHaveManeShouldReturnsTrue() throws Exception {
+    public void doesHaveManeShouldReturnsTrue() {
         boolean actualHasMane = lion.doesHaveMane();
 
         if (actualHasMane) {
             assertTrue(true);
         }
-            assertFalse(false);
+        assertFalse(false);
     }
 
     @Parameterized.Parameters
-    public static Object[][] getSumData() throws Exception {
+    public static Object[][] getSumData() {
         Feline feline = new Feline();
-        Lion lionMale = new Lion(feline, "Самец");
-        Lion lionFemale = new Lion(feline, "Самка");
+        Lion lionMale = null;
+        Lion lionFemale = null;
+        Lion lionNoSex = null;
+
+        try {
+            lionMale = new Lion(feline, "Самец");
+            lionFemale = new Lion(feline, "Самка");
+            lionNoSex = new Lion(feline, "Нет гендера");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return new Object[][]{
                 {feline, lionMale},
