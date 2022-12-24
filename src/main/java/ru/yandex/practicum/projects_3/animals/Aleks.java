@@ -13,7 +13,7 @@ public class Aleks extends Lion {
 
     @Override
     public int getKittens() {
-        return predator.getKittens(0);
+        return feline.getKittens(0);
     }
 
     public List<String> getFriends() {

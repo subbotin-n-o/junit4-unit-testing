@@ -23,14 +23,14 @@ public class CatTest {
     @Test
     public void getFoodReturnsValidFood() {
         Cat cat = new Cat(feline);
-        String[] expectedSound = {"Животные", "Птицы", "Рыба"};
+        String[] expectedFood = {"Животные", "Птицы", "Рыба"};
 
         try {
             Mockito.when(feline.eatMeat()).thenReturn(new ArrayList<>(Arrays.asList("Животные", "Птицы", "Рыба")));
-            String[] actualSound = new String[feline.eatMeat().size()];
-            cat.getFood().toArray(actualSound);
+            String[] actualFood = new String[feline.eatMeat().size()];
+            cat.getFood().toArray(actualFood);
 
-            Assert.assertArrayEquals(expectedSound, actualSound);
+            Assert.assertArrayEquals(expectedFood, actualFood);
 
         } catch (Exception e) {
             e.printStackTrace();
