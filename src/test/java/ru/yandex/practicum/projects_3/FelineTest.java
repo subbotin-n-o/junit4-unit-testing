@@ -3,25 +3,21 @@ package ru.yandex.practicum.projects_3;
 import org.junit.Test;
 import ru.yandex.practicum.projects_3.animals.Feline;
 
-import static org.junit.Assert.assertArrayEquals;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
 
     @Test
-    public void eatMeatReturnsValidFood() {
+    public void eatMeatReturnsValidFood() throws Exception {
         Feline feline = new Feline();
-        String[] expectedFood = {"Животные", "Птицы", "Рыба"};
+        List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
 
-        try {
-            String[] actualFood = new String[expectedFood.length];
-            feline.eatMeat().toArray(actualFood);
+        List<String> actualFoodList = feline.eatMeat();
 
-            assertArrayEquals(expectedFood, actualFood);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        assertEquals(expectedFoodList, actualFoodList);
 
     }
 

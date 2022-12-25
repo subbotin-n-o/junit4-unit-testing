@@ -4,8 +4,10 @@ import org.junit.Test;
 import ru.yandex.practicum.projects_3.animals.Aleks;
 import ru.yandex.practicum.projects_3.animals.Feline;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class AleksTest {
 
@@ -25,12 +27,11 @@ public class AleksTest {
     public void getFriendsReturnsValidListFriends() throws Exception {
         Feline feline = new Feline();
         Aleks aleks = new Aleks(feline);
-        String[] expectedFriendList = {"Марти", "Глория", "Мелман"};
+        List<String> expectedFriendList = Arrays.asList("Марти", "Глория", "Мелман");
 
-        String[] actualFriendList = new String[expectedFriendList.length];
-        aleks.getFriends().toArray(actualFriendList);
+        List<String> actualFriendList = aleks.getFriends();
 
-        assertArrayEquals(expectedFriendList, actualFriendList);
+        assertEquals(expectedFriendList, actualFriendList);
 
     }
 

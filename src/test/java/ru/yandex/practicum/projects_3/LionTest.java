@@ -1,6 +1,5 @@
 package ru.yandex.practicum.projects_3;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +12,7 @@ import ru.yandex.practicum.projects_3.animals.Lion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -38,18 +38,12 @@ public class LionTest {
     @Test
     public void getFoodReturnsValidFood() throws Exception {
         Lion lion = new Lion(felineMock, "Самец");
-        String[] expectedFood = {"Животные", "Птицы", "Рыба"};
+        List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
 
-        try {
-            Mockito.when(felineMock.eatMeat()).thenReturn(new ArrayList<>(Arrays.asList("Животные", "Птицы", "Рыба")));
-            String[] actualFood = new String[feline.eatMeat().size()];
-            lion.getFood().toArray(actualFood);
+        Mockito.when(felineMock.eatMeat()).thenReturn(new ArrayList<>(Arrays.asList("Животные", "Птицы", "Рыба")));
+        List<String> actualFoodList = lion.getFood();
 
-            Assert.assertArrayEquals(expectedFood, actualFood);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        assertEquals(expectedFoodList, actualFoodList);
 
     }
 

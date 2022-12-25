@@ -1,6 +1,5 @@
 package ru.yandex.practicum.projects_3;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -11,6 +10,7 @@ import ru.yandex.practicum.projects_3.animals.Feline;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,20 +21,15 @@ public class CatTest {
     private Feline feline;
 
     @Test
-    public void getFoodReturnsValidFood() {
+    public void getFoodReturnsValidFood() throws Exception {
         Cat cat = new Cat(feline);
-        String[] expectedFood = {"Животные", "Птицы", "Рыба"};
+        List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
 
-        try {
-            Mockito.when(feline.eatMeat()).thenReturn(new ArrayList<>(Arrays.asList("Животные", "Птицы", "Рыба")));
-            String[] actualFood = new String[feline.eatMeat().size()];
-            cat.getFood().toArray(actualFood);
+        Mockito.when(feline.eatMeat()).thenReturn(new ArrayList<>(Arrays.asList("Животные", "Птицы", "Рыба")));
+        List<String> actualFoodList = cat.getFood();
 
-            Assert.assertArrayEquals(expectedFood, actualFood);
+        assertEquals(expectedFoodList, actualFoodList);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Test

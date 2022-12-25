@@ -3,6 +3,9 @@ package ru.yandex.practicum.projects_3;
 import org.junit.Test;
 import ru.yandex.practicum.projects_3.animals.Animal;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class AnimalTest {
@@ -22,12 +25,11 @@ public class AnimalTest {
     @Test
     public void getFoodPredatorReturnsValidFood() throws Exception {
         Animal animal = new Animal();
-        String[] expectedFood = {"Животные", "Птицы", "Рыба"};
+        List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
 
-        String[] actualFood = new String[expectedFood.length];
-        animal.getFood("Хищник").toArray(actualFood);
+        List<String> actualFoodList = animal.getFood("Хищник");
 
-        assertArrayEquals(expectedFood, actualFood);
+        assertEquals(expectedFoodList, actualFoodList);
 
     }
 
