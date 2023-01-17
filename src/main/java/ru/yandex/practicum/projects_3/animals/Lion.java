@@ -1,12 +1,15 @@
-package com.example;
+package ru.yandex.practicum.projects_3.animals;
 
 import java.util.List;
 
 public class Lion {
 
-    boolean hasMane;
+    protected final boolean hasMane;
+    protected final Feline feline;
 
-    public Lion(String sex) throws Exception {
+    public Lion(Feline feline, String sex) throws Exception {
+        this.feline = feline;
+
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -15,8 +18,6 @@ public class Lion {
             throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
     }
-
-    Feline feline = new Feline();
 
     public int getKittens() {
         return feline.getKittens();
@@ -27,6 +28,7 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return feline.eatMeat();
     }
+
 }

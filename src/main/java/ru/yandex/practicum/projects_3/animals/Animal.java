@@ -1,4 +1,4 @@
-package com.example;
+package ru.yandex.practicum.projects_3.animals;
 
 import java.util.List;
 
@@ -17,4 +17,5 @@ public class Animal {
     public String getFamily() {
         return "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
     }
+
 }
